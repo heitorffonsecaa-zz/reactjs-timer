@@ -1,0 +1,64 @@
+@import 'assets/sass/functions/reset';
+@import 'assets/sass/functions/variables';
+@import 'assets/sass/functions/mixins';
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: gray;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  .timer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    .numbers {
+      display: flex;
+      gap: 10px;
+      .number {
+        padding: 10px;
+        background-color: black;
+        border-radius: 10px;
+        color: white;
+        font-size: 50px;
+
+        @include tablet {
+          font-size: 100px;
+        }
+
+        @include desktop {
+          font-size: 150px;
+        }
+      }
+    }
+
+    .dots {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 10px;
+      gap: 10px;
+
+      @include tablet {
+        width: 50px;
+      }
+
+      span {
+        width: 10px;
+        height: 10px;
+        border-radius: 20px;
+        background-color: white;
+
+        @include tablet {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react'
+import './timer.scss'
 
 const COUNTDOWN_INITIAL_TIME_IN_SECONDS = 25 * 60 // 25 minutes
 
@@ -17,10 +18,19 @@ export default function () {
     const seconds = secondsAmount % 60
 
     return (
-        <div>
-            <span>{String(minutes).padStart(2, '0')}</span>
-            <span>:</span>
-            <span>{String(seconds).padStart(2, '0')}</span>
+        <div className='wrapper'>
+            <div className='timer'>
+                <div className='numbers'>
+                    {String(minutes).padStart(2, '0').split('').map(number => <span className='number'>{number}</span>)}
+                </div>
+                <div className='dots'>
+                    <span/>
+                    <span/>
+                </div>
+                <div className='numbers'>
+                    {String(seconds).padStart(2, '0').split('').map(number => <span className='number'>{number}</span>)}
+                </div>
+            </div>
         </div>
     )
 }
